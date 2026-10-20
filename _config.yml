@@ -1,13 +1,8 @@
-title: GHOSTBYTE
-description: Notes from the terminal — security, systems, code, and curiosity.
-url: ""
-baseurl: ""
+title: ~/notes
+description: Notes, write-ups and the graph that connects them.
+baseurl: ""        # project repo? set to "/repo-name"
+url: ""            # e.g. https://username.github.io
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+permalink: /posts/:slug/
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-exclude:
-  - README.md
-  - Gemfile
-  - LICENSE

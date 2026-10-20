@@ -1,0 +1,18 @@
+---
+layout: default
+title: Graph
+full_graph: true
+---
+<div class="graph">
+  <canvas data-graph="full" data-src="{{ '/graph.json' | relative_url }}" aria-label="Interactive graph of posts and tags"></canvas>
+  <div class="bar">
+    <input id="q" type="search" placeholder="filter nodes" aria-label="Filter nodes">
+    <div class="legend">
+      <span><i style="background:var(--c-core)"></i>home</span>
+      <span><i style="background:var(--c-post)"></i>post</span>
+      <span><i style="background:var(--c-tag)"></i>tag</span>
+    </div>
+  </div>
+  <div id="info"></div>
+  <div class="hint">scroll to zoom · drag to move · click a node</div>
+</div>

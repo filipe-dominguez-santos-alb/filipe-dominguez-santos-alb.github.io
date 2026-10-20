@@ -1,4 +1,19 @@
 ---
-layout: home
-title: Home
+layout: default
 ---
+<div class="hero">
+  <div class="meta"><b>$</b> whoami</div>
+  <h1>Your Name<span class="cursor"></span></h1>
+  <p>Security engineer and tinkerer. I write down what I learn and link it together. New posts show up here and in the graph automatically.</p>
+</div>
+<ul class="posts">
+{% for p in site.posts %}
+  <li>
+    <time>{{ p.date | date: "%Y-%m-%d" }}</time>
+    <div>
+      <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+      <p>{{ p.excerpt | strip_html | strip | truncate: 140 }}</p>
+    </div>
+  </li>
+{% endfor %}
+</ul>
