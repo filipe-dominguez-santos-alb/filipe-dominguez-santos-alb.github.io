@@ -1,0 +1,13 @@
+title: GHOSTBYTE
+description: Notes from the terminal — security, systems, code, and curiosity.
+url: ""
+baseurl: ""
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - README.md
+  - Gemfile
+  - LICENSE

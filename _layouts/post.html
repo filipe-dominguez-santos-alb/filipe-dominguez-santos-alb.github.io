@@ -1,0 +1,4 @@
+---
+layout: default
+---
+<article class="article"><a class="back-link" href="{{ '/blog/' | relative_url }}">← Back to the blog</a><header class="article-header"><p class="eyebrow">FIELD NOTE / {{ page.date | date: "%d %b %Y" }}</p><h1>{{ page.title }}<span class="accent">.</span></h1>{% if page.description %}<p class="article-description">{{ page.description }}</p>{% endif %}<div class="post-meta">{% for category in page.categories %}<span class="tag">{{ category }}</span> {% endfor %}</div></header><div class="article-body">{{ content }}</div><div class="article-end"><span class="status-dot"></span> END OF TRANSMISSION</div></article>
