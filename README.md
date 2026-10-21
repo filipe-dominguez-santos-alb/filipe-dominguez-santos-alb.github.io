@@ -63,6 +63,18 @@ image: /assets/images/my-photo.jpg
 
 Posts without `image` get a small `>_` placeholder. Inside a post, add a photo with `![description]({{ '/assets/images/my-photo.jpg' | relative_url }})`. Keep files under about 500 KB.
 
+## Projects
+
+The `/projects/` page shows a grid of cards, three per row (two on tablets, one on phones), with the photo on top and the title below. Edit `_data/projects.yml`:
+
+```
+- title: My project
+  url: https://github.com/you/my-project
+  image: /assets/images/projects/my-project.jpg
+```
+
+Add one entry per project. Without `image`, a `>_` placeholder shows.
+
 ## Customise
 
 | What | Where |

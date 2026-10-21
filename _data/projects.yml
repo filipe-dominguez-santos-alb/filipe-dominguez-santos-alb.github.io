@@ -1,0 +1,15 @@
+# One entry per project. image is optional (a >_ placeholder shows without it).
+# Put images in assets/images/projects/
+- title: Project One
+  url: https://github.com/
+  image: /assets/images/projects/one.jpg
+- title: Project Two
+  url: https://github.com/
+- title: Project Three
+  url: https://github.com/
+- title: Project Four
+  url: https://github.com/
+- title: Project Five
+  url: https://github.com/
+- title: Project Six
+  url: https://github.com/

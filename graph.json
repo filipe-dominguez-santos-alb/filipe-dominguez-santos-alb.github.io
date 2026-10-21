@@ -3,7 +3,7 @@ layout: null
 ---
 {"nodes":[{"id":"home","label":"home","group":"core","url":"{{ '/' | relative_url }}"}
 {%- for p in site.posts -%},{"id":{{ p.slug | jsonify }},"label":{{ p.title | jsonify }},"group":"post","url":"{{ p.url | relative_url }}"}{%- endfor -%}
-{%- for t in site.tags -%},{"id":"tag:{{ t[0] }}","label":"#{{ t[0] }}","group":"tag"}{%- endfor -%}
+{%- for t in site.tags -%},{"id":"tag:{{ t[0] }}","label":"#{{ t[0] }}","group":"tag","url":"{{ '/tags/' | relative_url }}#{{ t[0] | slugify }}"}{%- endfor -%}
 ],"links":[
 {%- for p in site.posts -%}
 {%- unless forloop.first -%},{%- endunless -%}
