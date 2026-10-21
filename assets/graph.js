@@ -6,14 +6,16 @@ let N=[],E=[],W,H,dpr,s=1,ox=0,oy=0,alpha=1,hover=null,sel=null,dragN=null,pan=f
 const FONT="JetBrains Mono, monospace";
 function resize(){const r=cv.getBoundingClientRect();dpr=devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;if(!mini){ox=W/2;oy=H/2}alpha=Math.max(alpha,.3)}
 addEventListener("resize",resize);
-fetch(cv.dataset.src).then(r=>r.json()).then(d=>{
+function fail(m){resize();ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle="#ff6b6b";ctx.font="13px monospace";ctx.fillText(m,12,H/2)}
+addEventListener("error",e=>fail("Erro: "+e.message));
+(function(){let d;try{d=JSON.parse(document.getElementById("graph-data").textContent)}catch(err){fail("Erro nos dados do grafo: "+err.message);return}
   const by={};
   d.nodes.forEach((n,i)=>{const a=i/d.nodes.length*6.283;Object.assign(n,{x:Math.cos(a)*110+Math.random(),y:Math.sin(a)*110+Math.random(),vx:0,vy:0,deg:0,nb:new Set()});by[n.id]=n});
-  N=d.nodes;
+  N=d.nodes;if(!N.length){fail("Sem nodes: verifica a pasta _posts.");return}
   d.links.forEach(l=>{const a=by[l.s],b=by[l.t];if(a&&b){E.push({a,b});a.deg++;b.deg++;a.nb.add(b);b.nb.add(a)}});
   N.forEach(n=>n.r=4+Math.sqrt(n.deg)*2.4);
   resize();requestAnimationFrame(draw);
-});
+})();
 function tick(){
   if(alpha<.005&&!dragN)return;
   for(let i=0;i<N.length;i++){const a=N[i];

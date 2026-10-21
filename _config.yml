@@ -6,3 +6,5 @@ markdown: kramdown
 permalink: /posts/:slug/
 plugins:
   - jekyll-feed
+exclude:
+  - README.md
