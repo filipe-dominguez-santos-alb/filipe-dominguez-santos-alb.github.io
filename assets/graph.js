@@ -40,7 +40,7 @@ function draw(){
     ctx.globalAlpha=ok?1:.15;ctx.fillStyle=col(n.group);ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,6.283);ctx.fill();
     if(n===f||isCur){ctx.strokeStyle=isCur?"#fff":col(n.group);ctx.lineWidth=1.5/s;ctx.beginPath();ctx.arc(n.x,n.y,n.r+4,0,6.283);ctx.stroke()}
     const show=mini?(n===f||isCur||n.group==="core"):(ok&&(s>.8||n===f||n.deg>3||(q&&q.value)));
-    if(show){const fs=12/Math.max(s,.7);ctx.fillStyle=n===f||isCur?"#fff":"#9fb0a5";ctx.font=fs+"px "+FONT;ctx.textAlign="center";ctx.fillText(n.label,n.x,n.y+n.r+fs+2)}
+    if(show){const fs=12/Math.max(s,.7);ctx.fillStyle=n===f||isCur?"#fff":"#9fb0a5";ctx.font=fs+"px "+FONT;ctx.textAlign="center";ctx.fillText(n.label,n.x,n.y-n.r-2)}
   });
   ctx.globalAlpha=1;requestAnimationFrame(draw);
 }
