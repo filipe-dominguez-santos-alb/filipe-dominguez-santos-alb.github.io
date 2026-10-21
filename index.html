@@ -9,8 +9,11 @@ layout: default
 <ul class="posts">
 {% for p in site.posts %}
   <li>
-    <time>{{ p.date | date: "%Y-%m-%d" }}</time>
+    <a class="thumb" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      {% if p.image %}<img src="{{ p.image | relative_url }}" alt="" loading="lazy">{% else %}<span class="ph">&gt;_</span>{% endif %}
+    </a>
     <div>
+      <time>{{ p.date | date: "%Y-%m-%d" }}</time>
       <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
       <p>{{ p.excerpt | strip_html | strip | truncate: 140 }}</p>
     </div>
