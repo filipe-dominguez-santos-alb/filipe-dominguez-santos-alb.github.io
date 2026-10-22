@@ -5,3 +5,6 @@ tags: [meta]
 image: /assets/images/1.png
 ---
 First post. Every file in `_posts` becomes a page, shows up on the home list, and becomes a node in the graph.
+
+
+![My desk with two monitors](/assets/images/1.png)
