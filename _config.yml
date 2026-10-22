@@ -6,5 +6,8 @@ markdown: kramdown
 permalink: /posts/:slug/
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+paginate: 10                 # posts per page on the home page
+paginate_path: "/page:num/"
 exclude:
   - README.md

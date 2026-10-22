@@ -49,6 +49,10 @@ Your text in markdown.
 - `related` lists the slugs of other posts to link to. The slug is the filename without the date and extension, so `2026-10-19-ssh-tricks.md` has the slug `ssh-tricks`.
 - Commit and push. The post appears on the home page, in the feed and in the graph.
 
+## Pagination
+
+The home page shows 10 posts per page, with newer/older links at the bottom (`/page2/`, `/page3/`, and so on). Change `paginate` in `_config.yml` to show more or fewer. Pagination only works on the root `index.html`, so keep that file as `.html`.
+
 ## Photos
 
 Put images in `assets/images/` and give a post a thumbnail for the home page:
